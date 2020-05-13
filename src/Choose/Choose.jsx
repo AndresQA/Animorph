@@ -40,7 +40,7 @@ const Choose = (props) => {
         </div>
 
         <div className="next">
-        <Link to='/instrucciones'>
+        <Link to='/crea'>
             <button>Usar</button>
         </Link>
         </div>
