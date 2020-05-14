@@ -11,7 +11,6 @@ function App() {
   const [eyes, setEyes] = React.useState(1);
   const [mouth, setMouth] = React.useState(1);
   const [chin, setChin] = React.useState(0);
-  const [earsClass, setEarsClass] = React.useState('ears1')
 
   return (
     <div className="App">
@@ -21,7 +20,7 @@ function App() {
         <Route path="/instrucciones" component={Instructions} />
         <Route path="/escoge" render={(props) => <Choose skin={skin} setSkin={setSkin} location={props.location} />} />
         <Route path="/crea" render={(props) => <Custom skin={skin} location={props.location} ears={ears} setEars={setEars}
-        eyes={eyes} setEyes={setEyes} mouth={mouth} setMouth={setMouth} chin={chin} setChin={setChin} earsClass={earsClass} setEarsClass={setEarsClass} />} />
+        eyes={eyes} setEyes={setEyes} mouth={mouth} setMouth={setMouth} chin={chin} setChin={setChin}/>} />
       </Router>
 
 

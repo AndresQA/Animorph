@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Button } from '@material-ui/core';
+
 
 const Choose = (props) => {
     console.log(props)
@@ -41,7 +43,7 @@ const Choose = (props) => {
 
         <div className="next">
         <Link to='/crea'>
-            <button>Usar</button>
+        <Button variant="contained" color="primary" size="large" >Usar</Button>
         </Link>
         </div>
 

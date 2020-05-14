@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 const Instructions = (props) => {
 
@@ -59,7 +60,7 @@ const Instructions = (props) => {
         </div>
 
 
-        <button onClick={handleNext}>Siguiente</button>
+        <Button onClick={handleNext} variant="contained" color="primary" size="large" >Siguiente</Button>
 
     </div>
 }

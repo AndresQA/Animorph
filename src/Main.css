@@ -34,6 +34,12 @@ body:after {
   background-attachment: fixed;
 }
 
+.buttonpos {
+  position: absolute;
+  bottom: 100px;
+  right: 150px;
+}
+
 .Instructions {
   width: 100%;
   text-align: center;
@@ -266,22 +272,10 @@ body:after {
 
 .custom_chin {
   position: absolute;
-  top: 0;
+  top: 100px;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-}
-
-.ears1 {
-  top: -150px;
-}
-
-.ears2 {
-  top: -550px;
-}
-
-.tres {
-  top: 300px;
 }
 /*# sourceMappingURL=Main.css.map */

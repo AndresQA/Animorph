@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 const Home = (props) => {
 
@@ -11,7 +12,9 @@ const Home = (props) => {
 
     return <div>
         <Link to='/instrucciones'>
-            <button>Jugar</button>
+            <div className="buttonpos">
+            <Button variant="contained" color="primary" size="large" >Jugar</Button>
+            </div>
 
         </Link>
 
