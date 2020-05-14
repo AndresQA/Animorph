@@ -21,6 +21,11 @@ body, html {
   width: 100%;
 }
 
+body:after {
+  content: url(/images/homebackground.jpg) url(/images/backgroundchoose.jpg) url(/images/backgroundcustom.jpg) url(/images/backgroundins.jpg) url(/images/Animorphs/skin1.png);
+  display: none;
+}
+
 #background {
   background-image: url(/images/homebackground.jpg);
   background-repeat: no-repeat;
@@ -234,7 +239,7 @@ body, html {
 
 .custom_ears {
   position: absolute;
-  top: -380px;
+  top: -150px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -266,5 +271,17 @@ body, html {
   right: 0;
   bottom: 0;
   margin: auto;
+}
+
+.ears1 {
+  top: -150px;
+}
+
+.ears2 {
+  top: -550px;
+}
+
+.tres {
+  top: 300px;
 }
 /*# sourceMappingURL=Main.css.map */

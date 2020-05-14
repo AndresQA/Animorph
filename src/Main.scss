@@ -24,6 +24,11 @@ body, html {
     width: 100%;
   }
 
+  body:after {
+    content: url(/images/homebackground.jpg) url(/images/backgroundchoose.jpg) url(/images/backgroundcustom.jpg) url(/images/backgroundins.jpg) url(/images/Animorphs/skin1.png);
+    display: none;
+}
+
 @import 'App/App';
 @import 'Home/Home';
 @import 'Instructions/Instructions';
