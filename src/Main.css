@@ -40,6 +40,12 @@ body:after {
   right: 150px;
 }
 
+.buttonposCustom {
+  position: absolute;
+  bottom: 80px;
+  right: 150px;
+}
+
 .Instructions {
   width: 100%;
   text-align: center;
