@@ -9,7 +9,7 @@ const Choose = (props) => {
 
     if (props.location.pathname === "/escoge") {
         var background = document.getElementById('background');
-        background.style.backgroundImage = 'url(/images/backgroundchoose.jpg)';
+        background.style.backgroundImage = 'url(./images/backgroundchoose.jpg)';
     }
 
     const handleSkinSel = (index) =>{

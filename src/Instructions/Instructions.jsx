@@ -21,7 +21,7 @@ const Instructions = (props) => {
     if (props.location.pathname === "/instrucciones") {
         console.log("hola wapo")
         var background = document.getElementById('background');
-        background.style.backgroundImage = 'url(/images/backgroundins.jpg)';
+        background.style.backgroundImage = 'url(./images/backgroundins.jpg)';
     }
 
 

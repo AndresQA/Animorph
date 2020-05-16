@@ -6,7 +6,7 @@ const Home = (props) => {
 
     if (props.location.pathname === "/") {
         var background = document.getElementById('background');
-        background.style.backgroundImage = 'url(/images/homebackground.jpg)';
+        background.style.backgroundImage = 'url(./images/homebackground.jpg)';
     }
 
 

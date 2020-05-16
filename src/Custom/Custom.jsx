@@ -2,18 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tooltip, Button } from '@material-ui/core';
 import ReactAudioPlayer from 'react-audio-player';
-import domtoimage from 'dom-to-image';
-import { saveAs } from 'file-saver';
+import { useHistory } from 'react-router-dom';
 
 const Custom = (props) => {
-    
+
 
     const [play, setPlay] = React.useState(0);
-
-    if (props.location.pathname === "/crea") {
-        var background = document.getElementById('background');
-        background.style.backgroundImage = 'url(/images/backgroundcustom.jpg)';
-    }
+    const [finish, setFinish] = React.useState(0);
+    const [view, setView] = React.useState(0);
+    React.useEffect(() => {
+        const listString = localStorage.getItem('list');
+        if (props.location.pathname === "/crea") {
+            var background = document.getElementById('background');
+            background.style.backgroundImage = 'url(./images/backgroundcustom.jpg)';
+        }
+    }, []);
+    const history = useHistory();
 
     const handleClickEars = (index) => {
         handleFinishSound();
@@ -207,41 +211,64 @@ const Custom = (props) => {
         setPlay(1);
     }
 
-    const handleSave = () => {
-        domtoimage.toBlob(document.getElementById('custom_prevAnimorph'))
-        .then(function (blob) {
-            window.saveAs(blob, 'my-node.png');
-        });
+    const handlefinish = () => {
+        var background2 = document.getElementById('background');
+        console.log("holaa")
+        background2.style.backgroundImage = 'url(./images/backgroundfinish.jpg)';
+            setFinish(1);
+     
+
+    }
+
+    const handleviewani = () => {
+        if (props.eyes !== 1) {
+            setView(1);
+        }
+    }
+
+    const handlereset = () => {
+        history.push('/');
+        props.setEars(1);
+        props.setEyes(1);
+        props.setMouth(1);
+        props.setChin(0);
     }
 
 
 
-    return <div className="custom">
-        <div className="custom__btnnav">
-            <Tooltip title="Mira como tu Animorph" arrow placement="right">
-                <img src="./images/Buttons/btnojo.png" alt="" />
-            </Tooltip>
-            <Tooltip title="Escucha como tu Animorph" arrow placement="left">
-                <img onClick={handleSound} src="./images/Buttons/btnoir.png" alt="" />
-            </Tooltip>
-        </div>
 
-        <div className="custom_preview">
-            <div className="custom__btnSel">
-                <Tooltip title="Orejas" arrow placement="left">
-                    <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickEars(+1)} alt="" />
+    return <div className="custom">
+
+
+
+        {view === 0 &&
+            <div className="custom__btnnav">
+                <Tooltip title="Mira como tu Animorph" arrow placement="right">
+                    <img onClick={handleviewani} src="./images/Buttons/btnojo.png" alt="" />
                 </Tooltip>
-                <Tooltip title="Ojos" arrow placement="left">
-                    <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickEyes(+1)} alt="" />
-                </Tooltip>
-                <Tooltip title="Boca" arrow placement="left">
-                    <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickMouth(+1)} alt="" />
-                </Tooltip>
-                <Tooltip title="Pelaje" arrow placement="left">
-                    <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickChin(+1)} alt="" />
+                <Tooltip title="Escucha como tu Animorph" arrow placement="left">
+                    <img onClick={handleSound} src="./images/Buttons/btnoir.png" alt="" />
                 </Tooltip>
             </div>
+        }
 
+        <div className="custom_preview">
+            {finish === 0 &&
+                <div className="custom__btnSel left">
+                    <Tooltip title="Orejas" arrow placement="left">
+                        <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickEars(+1)} alt="" />
+                    </Tooltip>
+                    <Tooltip title="Ojos" arrow placement="left">
+                        <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickEyes(+1)} alt="" />
+                    </Tooltip>
+                    <Tooltip title="Boca" arrow placement="left">
+                        <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickMouth(+1)} alt="" />
+                    </Tooltip>
+                    <Tooltip title="Pelaje" arrow placement="left">
+                        <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickChin(+1)} alt="" />
+                    </Tooltip>
+                </div>
+            }
             <div className="custom_prevAnimorph" id="custom_prevAnimorph">
                 <img className="custom_skinPrev" src={'./images/Animorphs/skin' + props.skin + '.png'} alt="" />
                 <img className="custom_chin" id="chin" src={'./images/Animorphs/Chin/barbilla' + props.chin + '.png'} alt="" />
@@ -249,21 +276,22 @@ const Custom = (props) => {
                 <img className="custom_mouth" id="mouth" src={props.mouth === 1 ? './images/Animorphs/Mouth/boca' + props.mouth + '' + props.skin + '.png' : './images/Animorphs/Mouth/boca' + props.mouth + '.png'} alt="" />
                 <img className="custom_ears" id="ears" src={props.ears === 1 ? './images/Animorphs/Ears/orejas' + props.ears + '' + props.skin + '.png' : './images/Animorphs/Ears/orejas' + props.ears + '.png'} alt="" />
             </div>
-
-            <div  className="custom__btnSel right">
-                <Tooltip title="Orejas" arrow placement="right">
-                    <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickEars(-1)} alt="" />
-                </Tooltip>
-                <Tooltip title="Ojos" arrow placement="right">
-                    <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickEyes(-1)} alt="" />
-                </Tooltip>
-                <Tooltip title="Boca" arrow placement="right">
-                    <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickMouth(-1)} alt="" />
-                </Tooltip>
-                <Tooltip title="Pelaje" arrow placement="right">
-                    <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickChin(-1)} alt="" />
-                </Tooltip>
-            </div>
+            {finish === 0 &&
+                <div className="custom__btnSel right">
+                    <Tooltip title="Orejas" arrow placement="right">
+                        <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickEars(-1)} alt="" />
+                    </Tooltip>
+                    <Tooltip title="Ojos" arrow placement="right">
+                        <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickEyes(-1)} alt="" />
+                    </Tooltip>
+                    <Tooltip title="Boca" arrow placement="right">
+                        <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickMouth(-1)} alt="" />
+                    </Tooltip>
+                    <Tooltip title="Pelaje" arrow placement="right">
+                        <img src="./images/Buttons/btnflecha.png" onClick={() => handleClickChin(-1)} alt="" />
+                    </Tooltip>
+                </div>
+            }
 
         </div>
 
@@ -275,13 +303,36 @@ const Custom = (props) => {
             />
 
         }
-        {/*
-        <Button variant="contained" color="primary" size="large" onClick={handleSave} >Guardar</Button>
-        */}
-        <div className="buttonposCustom">
-            <Button variant="contained" color="primary" size="large" >Convertir</Button>
-        </div>
+        {view === 0 &&
+            <div className="buttonposCustom">
+                {finish === 0 &&
+                    <Button variant="contained" color="primary" size="large" onClick={handlefinish} >Convertir</Button>
+                }
+            </div>
 
+        }
+
+        {finish === 1 &&
+            <div className="buttonposCustom">
+                <Button variant="contained" color="primary" size="large" onClick={handlereset} >Reiniciar</Button>
+            </div>
+
+        }
+
+        {view === 1 &&
+            <div className="custom_animorphview">
+                <div className="custom_animorphviewcontent">
+
+                    <img src={'./images/POV/' + props.eyes + '.jpg'} alt="" />
+
+                    <div className="custom_btnexitview">
+                        <Button variant="contained" color="secondary" onClick={() => setView(0)}>Salir</Button>
+                    </div>
+
+                </div>
+            </div>
+
+        }
 
 
 

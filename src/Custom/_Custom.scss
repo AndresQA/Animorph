@@ -20,7 +20,6 @@
 .custom_preview {
     margin: auto;
     display: flex;
-    width: 40%;
     justify-content: space-between;
 }
 
@@ -43,8 +42,12 @@
     & img {
         cursor: pointer;
     }
+    margin-left: 100px;
 }
 
+.left{
+    margin-right: 100px;
+}
 .custom_prevAnimorph {
     position: relative;
 }
@@ -57,7 +60,6 @@
     bottom: 0;
     margin: auto;
 }
-
 
 .custom_eyes {
     position: absolute;
@@ -84,4 +86,33 @@
     right: 0;
     bottom: 0;
     margin: auto;
+}
+
+.custom_animorphview {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    & img {
+        width: 80%;
+        margin: auto;
+    }
+
+    & div{
+        margin: auto;
+    }
+
+}
+
+.custom_btnexitview {
+    height: 40px;
+}
+
+
+.custom_animorphviewcontent{
+height: 100%;
+width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }
