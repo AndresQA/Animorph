@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Animorph/static/css/main.e41e32e5.chunk.css",
+    "main.css": "/Animorph/static/css/main.84efb8f8.chunk.css",
     "main.js": "/Animorph/static/js/main.ec7c172d.chunk.js",
     "main.js.map": "/Animorph/static/js/main.ec7c172d.chunk.js.map",
     "runtime-main.js": "/Animorph/static/js/runtime-main.07f8f0fc.js",
@@ -8,15 +8,15 @@
     "static/js/2.ae63d8f7.chunk.js": "/Animorph/static/js/2.ae63d8f7.chunk.js",
     "static/js/2.ae63d8f7.chunk.js.map": "/Animorph/static/js/2.ae63d8f7.chunk.js.map",
     "index.html": "/Animorph/index.html",
-    "precache-manifest.e2da22b260cad49b8929fed3350b76ff.js": "/Animorph/precache-manifest.e2da22b260cad49b8929fed3350b76ff.js",
+    "precache-manifest.9c246569d96916fb3324f81b579f6beb.js": "/Animorph/precache-manifest.9c246569d96916fb3324f81b579f6beb.js",
     "service-worker.js": "/Animorph/service-worker.js",
-    "static/css/main.e41e32e5.chunk.css.map": "/Animorph/static/css/main.e41e32e5.chunk.css.map",
+    "static/css/main.84efb8f8.chunk.css.map": "/Animorph/static/css/main.84efb8f8.chunk.css.map",
     "static/js/2.ae63d8f7.chunk.js.LICENSE.txt": "/Animorph/static/js/2.ae63d8f7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.07f8f0fc.js",
     "static/js/2.ae63d8f7.chunk.js",
-    "static/css/main.e41e32e5.chunk.css",
+    "static/css/main.84efb8f8.chunk.css",
     "static/js/main.ec7c172d.chunk.js"
   ]
 }
