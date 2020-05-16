@@ -45,7 +45,7 @@
     margin-left: 100px;
 }
 
-.left{
+.left {
     margin-right: 100px;
 }
 .custom_prevAnimorph {
@@ -97,22 +97,26 @@
         margin: auto;
     }
 
-    & div{
+    & div {
         margin: auto;
     }
-
 }
 
 .custom_btnexitview {
     height: 40px;
 }
 
-
-.custom_animorphviewcontent{
-height: 100%;
-width: 100%;
+.custom_animorphviewcontent {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
+    & img {
+        border: solid 8px white;
+        -webkit-box-shadow: 10px 10px 20px -6px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 20px -6px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 20px -6px rgba(0, 0, 0, 0.75);
+    }
 }

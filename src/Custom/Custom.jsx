@@ -320,7 +320,7 @@ const Custom = (props) => {
         }
 
         {view === 1 &&
-            <div className="custom_animorphview">
+            <div className="custom_animorphview" onClick={() => setView(0)}>
                 <div className="custom_animorphviewcontent">
 
                     <img src={'./images/POV/' + props.eyes + '.jpg'} alt="" />

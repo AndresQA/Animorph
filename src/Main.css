@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -6,7 +6,7 @@
 
 body, html {
   margin: 0px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   height: 100%;
   width: 100%;
 }
@@ -19,11 +19,6 @@ body, html {
 .App {
   height: 100%;
   width: 100%;
-}
-
-body:after {
-  content: url(/images/homebackground.jpg) url(/images/backgroundchoose.jpg) url(/images/backgroundcustom.jpg) url(/images/backgroundins.jpg) url(/images/backgroundfinish.jpg);
-  display: none;
 }
 
 #background {
@@ -53,9 +48,9 @@ body:after {
 
 .Instructions__text {
   margin: auto;
-  padding-top: 150px;
+  padding-top: 70px;
   width: 40%;
-  height: 560px;
+  height: 490px;
   position: relative;
 }
 
@@ -323,5 +318,11 @@ body:after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.custom_animorphviewcontent img {
+  border: solid 8px white;
+  -webkit-box-shadow: 10px 10px 20px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 20px -6px rgba(0, 0, 0, 0.75);
 }
 /*# sourceMappingURL=Main.css.map */
